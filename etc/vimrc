@@ -130,10 +130,21 @@ set listchars=tab:▸\ ,extends:>,precedes:<
 
 " Always show the customized statusline
 set laststatus=2
-set statusline=%<%f\ [%M%n%R%H]%=%l/%L,%v\ %p%%
+set statusline=                             " clear for when vimrc is reloaded
+set statusline+=%<                          " filename
+set statusline+=%f\                         
+set statusline+=[%M%n%R%H]\ 
+set statusline+=%{fugitive#statusline()}\   " git status
+set statusline+=%=                          " right align
+set statusline+=%b,0x%-8B\                  " current char
+set statusline+=%l/%L,%v\                   " line
+set statusline+=%p%%                        " pct through
 
 
 
 set fo=cq	" auto-wrap comments, format comments
 "set number	" line numbering
+
+" auto reload vimrc after edit
+autocmd! bufwritepost .vimrc source %
 
