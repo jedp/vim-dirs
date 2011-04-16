@@ -1,0 +1,135 @@
+filetype off 
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+filetype plugin indent on
+
+" vi? is it even possible to run original vi anymore?
+set nocompatible
+
+
+" http://lists.alioth.debian.org/pipermail/pkg-vim-maintainers/2007-June/004020.html
+set modelines=0
+
+set expandtab 
+set smarttab
+set shiftwidth=4 
+set tabstop=4
+set softtabstop=4
+
+set hidden                  " allow changing buffers without saving
+set nojoinspaces            " don't insert two spaces when joining sentences
+set scrolloff=3             " keep 3 lines above and below when scrolling
+
+syntax enable
+set background=light
+colorscheme solarized
+
+set autoindent 
+set showmode 
+set showcmd
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set ttyfast                 " smoother redraw on newer terminals
+set laststatus=2
+set relativenumber          " love relative line numbering
+set numberwidth=1           " use min spaces for numbers
+set undofile
+set ruler
+set list                    " display unprintable characters
+
+set encoding=utf-8
+set scrolloff=3
+
+set ignorecase      " lowercase = case-insensitive
+set smartcase       " mixed case = case-sensitive
+set gdefault        " make g the default in :%s/foo/bar/
+set incsearch       " highlight results as you type
+set showmatch       " highlight matching brackets
+set matchtime=4     " blink matching brackets for 4/10 sec
+set hlsearch        " highlight the last used pattern
+
+" ----------------------------------------------------------------------
+" key mapping
+" ----------------------------------------------------------------------
+let mapleader=","
+
+" save a keystroke
+noremap ; :
+
+" searching and regexes
+nnoremap/ /\v
+vnoremap/ /\v
+
+" clear search
+nnoremap <leader><space> :noh<cr>
+
+" make tab key match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" handle long lines
+" see :help fo-table for soft and hard wrapping
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
+" get rid of help key
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" forgot to open the file with sudo? no probalo
+cnoremap w!! w !sudo tee % >/dev/null
+
+" Move between windows using Ctrl + home row motion keys
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+" Change the CWD to where the current file is located
+noremap <silent> <Leader>cd :cd %:p:h<CR>
+
+" Justify text center, left, or right
+noremap <silent> <Leader>jc :center<CR>
+noremap <silent> <Leader>jl :left<CR>
+noremap <silent> <Leader>jr :right<CR>
+
+" NERD_tree.vim - File Explorer
+let g:NERDTreeChDirMode = 2     " the CDW will follow the root folder
+let g:NERDTreeQuitOnOpen = 1    " close the exporer window after opening a file
+let g:NERDTreeWinPos = 'left'   " position the explorer window on the left
+noremap <silent> <Leader>fe :NERDTreeToggle<CR>
+
+" save on losing focus
+au FocusLost * :wa
+
+" paragraph formatting
+nnoremap <leader>q gqip
+
+" select text that was just pasted
+nnoremap <leader>v V`]
+
+" open and vertical split and switch over to file
+nnoremap <leader>w <C-w><C-w>l
+
+" hide the tool bar
+if has("gui_running")
+    set guioptions=egmrt
+endif
+
+" In list mode, use these custom characters
+set listchars=tab:▸\ ,extends:>,precedes:<
+
+" Always show the customized statusline
+set laststatus=2
+set statusline=%<%f\ [%M%n%R%H]%=%l/%L,%v\ %p%%
+
+
+
+set fo=cq	" auto-wrap comments, format comments
+"set number	" line numbering
+
