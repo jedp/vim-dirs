@@ -102,7 +102,11 @@ noremap <silent> <Leader>jr :right<CR>
 let g:NERDTreeChDirMode = 2     " the CDW will follow the root folder
 let g:NERDTreeQuitOnOpen = 1    " close the exporer window after opening a file
 let g:NERDTreeWinPos = 'left'   " position the explorer window on the left
-noremap <silent> <Leader>fe :NERDTreeToggle<CR>
+noremap <silent> <Leader>nt :NERDTreeToggle<CR>
+
+" taglist
+let g:Tlist_GainFocus_On_ToggleOpen=1 "focus on taglist
+noremap <silent> <Leader>tl :TlistToggle<cr>
 
 " save on losing focus
 au FocusLost * :wa
