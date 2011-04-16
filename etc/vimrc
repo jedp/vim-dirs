@@ -58,6 +58,10 @@ let mapleader=","
 " save a keystroke
 noremap ; :
 
+" i so often make this mistake
+cnoremap E e
+cnoremap W w
+
 " searching and regexes
 nnoremap/ /\v
 vnoremap/ /\v
