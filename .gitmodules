@@ -1,3 +1,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-posterous"]
+	path = bundle/vim-posterous
+	url = git://github.com/agscala/vim-posterous.git
