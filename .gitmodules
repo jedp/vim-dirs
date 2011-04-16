@@ -4,3 +4,6 @@
 [submodule "bundle/vim-posterous"]
 	path = bundle/vim-posterous
 	url = git://github.com/agscala/vim-posterous.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
