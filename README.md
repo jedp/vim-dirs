@@ -39,9 +39,10 @@ Inspiration
 
 These folks have some great stuff to pillage:
 
-- http://stevelosh.com/blog/2010/09/coming-home-to-vim/
-- https://github.com/elasticdog/dotfiles/blob/master/vimrc
-
+- [Coming Home to Vim](http://stevelosh.com/blog/2010/09/coming-home-to-vim/),
+  by Steve Losh
+- [Vim Dotfiles](https://github.com/elasticdog/dotfiles/blob/master/vimrc) by
+  Aaron Bull Schaefer
 
 
 Use
